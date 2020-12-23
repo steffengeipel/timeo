@@ -1,15 +1,17 @@
-import * as React from "react";
+import * as React from 'react';
 
 function SvgLogo(props) {
   return (
     <svg
-      viewBox="0 0 2134 1250"
       xmlns="http://www.w3.org/2000/svg"
       fillRule="evenodd"
       clipRule="evenodd"
       strokeLinejoin="round"
       strokeMiterlimit={2}
+      className="absolute h-full w-full"
+      viewBox="0 0 7000 7000"
       {...props}
+
     >
       <path
         d="M997.665 484.793v43.894h-71.079v229.001h-45.941V528.687h-71.078v-43.894h188.098z"
