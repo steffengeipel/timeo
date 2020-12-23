@@ -1,8 +1,8 @@
-import '../styles/index.css'
+import '../styles/index.css';
 
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  return <Component {...pageProps} />;
 }
-MyApp.prototype = {}
+MyApp.prototype = {};
 
-export default MyApp
+export default MyApp;
