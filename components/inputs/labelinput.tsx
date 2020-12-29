@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const Labelinput = ({
   type = 'text',
@@ -7,20 +7,21 @@ const Labelinput = ({
 }: {
   type: string
   placeholder: string
-  onChange: () => {}
-}) => {
-  return (
-    <>
-      <div className='label-float'>
-        <input
-          type={type}
-          placeholder=' '
-          className='w-full'
-          onChange={onChange}
-        />
-        <label>{placeholder}</label>
-      </div>
-      <style jsx>{`
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
+}) => (
+  <>
+    <div className="label-float">
+      <input
+        id="input"
+        type={type}
+        placeholder=" "
+        className="w-full"
+        onChange={onChange}
+      />
+      <label htmlFor="input">{placeholder}</label>
+    </div>
+    <style jsx>
+      {`
         .label-float {
           position: relative;
           padding-top: 13px;
@@ -73,9 +74,9 @@ const Labelinput = ({
           margin-top: 0;
           color: #3951b5;
         }
-      `}</style>
-    </>
-  )
-}
+      `}
+    </style>
+  </>
+);
 
-export default Labelinput
+export default Labelinput;
