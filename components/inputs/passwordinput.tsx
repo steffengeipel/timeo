@@ -1,8 +1,8 @@
 import { NextPage } from 'next';
 import React, { useState } from 'react';
 import Labelinput from '@components/inputs/labelinput';
-import SvgCheck from '../../assets/SvgCheck';
-import SvgLock from '../../assets/SvgLock';
+import SvgCheck from '@svg/SvgCheck';
+import SvgLock from '@svg/assets/SvgLock';
 
 const pwRegex = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/;
 // At least one upper case English letter, (?=.*?[A-Z])
