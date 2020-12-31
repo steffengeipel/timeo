@@ -2,7 +2,7 @@ import { NextPage } from 'next';
 import React, { useState } from 'react';
 import Labelinput from '@components/inputs/labelinput';
 import SvgCheck from '@svg/SvgCheck';
-import SvgLock from '@svg/assets/SvgLock';
+import SvgLock from '@svg/SvgLock';
 
 const pwRegex = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/;
 // At least one upper case English letter, (?=.*?[A-Z])
@@ -14,9 +14,9 @@ const pwRegex = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/
 const EmailInput: NextPage = () => {
   const [valid, setValid] = useState(false);
 
-  const onChangePassword = (password: string): void =>  {
+  const onChangePassword = (password: string): void => {
     setValid(pwRegex.test(password));
-  }
+  };
 
   return (
     <div className="flex items-center h-full">
@@ -24,7 +24,13 @@ const EmailInput: NextPage = () => {
         <SvgLock width={35} color="grey" />
       </div>
       <div className="w-full">
-        <Labelinput type="password" placeholder="Passwort" onChange={(e) => { onChangePassword(e.target.value); }} />
+        <Labelinput
+          type="password"
+          placeholder="Passwort"
+          onChange={(e) => {
+            onChangePassword(e.target.value);
+          }}
+        />
       </div>
       <div className="w-16 ml-12">
         {valid && <SvgCheck width={25} color="green" fill="green" />}
