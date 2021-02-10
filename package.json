@@ -6,12 +6,10 @@
     "build": "next build",
     "build-static": "next build && next export",
     "start": "next start",
-    "postbuild": "next-on-netlify",
     "lint": "eslint .eslintrc.js"
   },
   "dependencies": {
     "next": "latest",
-    "next-on-netlify": "^2.6.3",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "swr": "^0.3.11"
