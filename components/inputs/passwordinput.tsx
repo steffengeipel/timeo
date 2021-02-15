@@ -2,6 +2,7 @@ import { NextPage } from 'next';
 import React, { useState } from 'react';
 import Labelinput from '@components/inputs/labelinput';
 import SvgCheck from '@svg/SvgCheck';
+import SvgShieldWarnung from '@svg/SvgSchieldWarning';
 import SvgLock from '@svg/SvgLock';
 
 const pwRegex = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/;
@@ -11,7 +12,7 @@ const pwRegex = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/
 // At least one special character, (?=.*?[#?!@$%^&*-])
 // Minimum eight in length .{8,} (with the anchors)
 
-const EmailInput: NextPage = () => {
+const PasswordInput: NextPage = ({ label }) => {
   const [valid, setValid] = useState(false);
 
   const onChangePassword = (password: string): void => {
@@ -26,17 +27,21 @@ const EmailInput: NextPage = () => {
       <div className="w-full">
         <Labelinput
           type="password"
-          placeholder="Passwort"
+          placeholder={label ?? 'Passwort'}
           onChange={(e) => {
             onChangePassword(e.target.value);
           }}
         />
       </div>
-      <div className="w-16 ml-12">
-        {valid && <SvgCheck width={25} color="green" fill="green" />}
+      <div className="w-16">
+        {valid ? (
+          <SvgCheck width={25} color="green" fill="green" />
+        ) : (
+          <SvgShieldWarnung width={30} color="white" fill="red" />
+        )}
       </div>
     </div>
   );
 };
 
-export default EmailInput;
+export default PasswordInput;

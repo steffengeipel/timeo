@@ -8,12 +8,12 @@ const emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@
 const EmailInput = () => {
   const [valid, setValid] = useState(false);
 
-  const onChangeEmail = (email: string) : void => {
+  const onChangeEmail = (email: string): void => {
     setValid(emailRegex.test(email));
   };
 
   return (
-    <div className="flex items-center h-full">
+    <div className="flex items-center h-full w-full">
       <div className="w-16 mr-2">
         <SvgEmail width={35} color="grey" />
       </div>
@@ -24,7 +24,7 @@ const EmailInput = () => {
           onChange={(e) => onChangeEmail(e.target.value)}
         />
       </div>
-      <div className="w-16 ml-12">
+      <div className="w-16">
         {valid && <SvgCheck width={25} color="green" fill="green" />}
       </div>
     </div>
