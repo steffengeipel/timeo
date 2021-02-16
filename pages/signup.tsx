@@ -7,7 +7,7 @@ const SignUp: NextPage = () => (
   <div className="h-screen flex">
     <div className="m-auto text-center">
       <h1 className="h1">Herzlich Willkommen auf timeo!</h1>
-      <span className="">Bitte loggen Sie sich ein.</span>
+      <span>Bitte loggen Sie sich ein.</span>
       <div className="shadow-lg rounded bg-white p-5 space-y-5">
         <EmailInput />
         <NewPasswordInput />
